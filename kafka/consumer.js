@@ -1,7 +1,7 @@
 import kafka from './client.js';
 import config from '../config/config.js';
 
-const consumer = kafka.consumer({ groupId: 'shopping-group' });
+const consumer = kafka.consumer({ groupId: 'kafka-service' });
 
 const runConsumer = async () => {
   await consumer.connect();

@@ -1,7 +1,7 @@
 export default {
   kafka: {
-    host: "3.110.136.199:9092",
-    clientId: "shopping-service",
+    host: "3.111.57.207:9092",
+    clientId: "kafka-service",
     topics: {
       order: "order",
       cart: "cart",

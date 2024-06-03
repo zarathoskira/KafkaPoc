@@ -5,7 +5,7 @@ import orderRoutes from './routes/orderRoutes.js';
 import cartRoutes from './routes/cartRoutes.js';
 import wishlistRoutes from './routes/wishlistRoutes.js';
 import config from './config/config.js';
-// import admin from "./kafka/admin.js"
+import admin from "./kafka/admin.js"
 const app = express();
 const port = config.express.port;
 
@@ -18,6 +18,9 @@ app.use('/cart', cartRoutes);
 app.use('/wishlist', wishlistRoutes);
 // Kafka consumer and producer initialization
 (async () => {
+  // await admin.createTopics();
+  // await admin.increaseTopicsPartition();
+  await admin.createTopicsAndPartitions()
   await producer.connect();
   await runConsumer();
 })();
